@@ -6,9 +6,10 @@
 [Kullanıcıların seyahatlerini kolayca planlayabilcekleri, rezervasyon yapabilecekleri, araç kiralayabilecekleri, çeşitli konaklama alternatifleri bulabilecekleri kapsamlı bir seyahat uygulamasıdır.]
 
 ## Ekibimiz
-- **Danışman:** Keyvan Arasteh [GitHub](https://github.com/keyvanarasteh) 
+- **Danışman:** Keyvan Arasteh [https://github.com/keyvanarasteh]
+
 - **Takım Üyeleri:**
-   - Dilara Dertli [GitHub](https://github.com/dilaradertli)
+   - Dilara Dertli [https://github.com/dilaradertli]
 
 ## Özellikler
 - [Dil Desteği]
