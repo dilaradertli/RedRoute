@@ -21,8 +21,9 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-  assest:
-    - assests/images/
-    - assests/icons/
-    - assests/languages/
-    - assests/motions/
+  assets:
+    - assets/fonts/
+    - assets/images/
+    - assets/icons/
+    - assets/languages/
+    - assets/motions/
