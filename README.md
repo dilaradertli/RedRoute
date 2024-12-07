@@ -23,6 +23,7 @@
 ### Gereksinimler
 - Flutter SDK (sürüm 3.24.4)
 - Dart SDK (sürüm 3.5.4)
+- Visual Studio Code
 
 ### Kurulum Adımları
 1. Projeyi bilgisayarınıza indirin:
