@@ -7,7 +7,7 @@ class KisiselbilgilerScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.red,
+        backgroundColor: const Color.fromARGB(255, 200, 20, 7),
         title: Align(
           alignment: Alignment.centerLeft,
           child: Text(
