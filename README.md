@@ -57,7 +57,17 @@ lib/
 ```
 
 ## Ekran Görüntüleri
+![GirişSayfası](https://github.com/user-attachments/assets/e44699f7-bb51-4550-881a-3506e36bd98b)
 
+![AnaSayfa](https://github.com/user-attachments/assets/1f0eb746-b037-492b-aaed-d520654b779e)
+
+![AramaSayfası](https://github.com/user-attachments/assets/43594ad7-f06c-4a65-8130-f5b19b7f501b)
+
+![ProfilSayfası](https://github.com/user-attachments/assets/dac4d077-51ec-411a-b466-13c542616044)
+
+![DilSeçenekleri](https://github.com/user-attachments/assets/bd658b63-e92d-4763-a867-e98fb5593609)
+
+![KişiselBilgiler](https://github.com/user-attachments/assets/ccd075a0-a09d-499e-a920-c4a11bb9600b)
 
 ## Projeye Katkı Sağlama
 1. Projeyi forklayın.   
