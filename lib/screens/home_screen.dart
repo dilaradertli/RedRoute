@@ -1,8 +1,11 @@
-// ana ekran
-
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
+import 'package:provider/provider.dart';
+
+import '../core/constants.dart';
+import '../core/themes.dart';
+import '../widgets/bottom_menu.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -11,7 +14,6 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      // AppBar
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 200, 20, 7),
         title: const Text(
@@ -31,19 +33,21 @@ class HomeScreen extends StatelessWidget {
             icon: const Icon(CupertinoIcons.bell),
             onPressed: () {},
           ),
+          IconButton(
+            icon: Icon(CupertinoIcons.moon),
+            onPressed: () {
+              context.read<ThemeProvider>().toggleTheme();
+            },
+          ),
         ],
       ),
-
-      // Drawer (Yan Menü)
       drawer: Drawer(
         backgroundColor: Colors.white,
         elevation: 0,
         child: Column(
           children: [
-            // Drawer Header
             Container(
               height: 200,
-              // color: Colors.blue,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -56,7 +60,6 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
             ),
-            // Menü öğeleri
             ListTile(
               leading: const Icon(CupertinoIcons.home),
               title: const Text('Ana Sayfa'),
@@ -64,7 +67,6 @@ class HomeScreen extends StatelessWidget {
                 Navigator.pop(context);
               },
             ),
-
             ListTile(
               leading: const Icon(CupertinoIcons.search),
               title: const Text('History'),
@@ -81,16 +83,14 @@ class HomeScreen extends StatelessWidget {
             ),
             ListTile(
               leading: const Icon(CupertinoIcons.settings),
-              title: const Text('Ayarlar'),
+              title: const Text('Settings'),
               onTap: () {
-                Navigator.pop(context);
+                context.go("/settings");
               },
             ),
           ],
         ),
       ),
-
-      // Ana içerik
       body: Column(
         children: [
           Expanded(
@@ -275,8 +275,6 @@ class HomeScreen extends StatelessWidget {
           )
         ],
       ),
-
-      // Alt navigasyon çubuğu
       bottomNavigationBar: Container(
         height: 70,
         child: Row(
