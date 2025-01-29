@@ -1,8 +1,11 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app/screens/diller_screen.dart';
-import 'package:flutter_app/screens/guvenlik_screen.dart';
-import 'package:flutter_app/screens/kisiselbilgiler_screen.dart';
-import 'package:flutter_app/screens/odemeler_screen.dart';
+import 'package:go_router/go_router.dart';
+import 'package:provider/provider.dart';
+
+import '../core/constants.dart';
+import '../core/themes.dart';
+import '../widgets/bottom_menu.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -10,133 +13,86 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 200, 20, 7),
         title: Text(
-          'RedRoute',
+          "Profil",
           style: TextStyle(
-              color: Colors.white, fontSize: 20, fontStyle: FontStyle.italic),
+              color: Colors.white,
+              fontSize: 25,
+              fontWeight: FontWeight.bold,
+              fontStyle: FontStyle.italic),
         ),
-      ),
-      backgroundColor: Colors.white,
-      body: Column(
-        children: [
-          // Kişisel Bilgiler sekmesi
-          InkWell(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => KisiselbilgilerScreen()),
-              );
+        actions: [
+          IconButton(
+            icon: Icon(CupertinoIcons.moon),
+            onPressed: () {
+              context.read<ThemeProvider>().toggleTheme();
             },
-            child: Container(
-              padding: EdgeInsets.all(16),
-              child: Row(
-                children: [
-                  Icon(Icons.person),
-                  SizedBox(width: 16),
-                  Text('Kişisel Bilgiler'),
-                ],
-              ),
-            ),
-          ),
-          Divider(
-            color: Colors.blueGrey,
-            thickness: 2,
-          ),
-          // Diller sekmesi
-          InkWell(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => DillerScreen()),
-              );
-            },
-            child: Container(
-              padding: EdgeInsets.all(16),
-              child: Row(
-                children: [
-                  Icon(Icons.language),
-                  SizedBox(width: 16),
-                  Text('Diller'),
-                ],
-              ),
-            ),
-          ),
-          Divider(
-            color: Colors.blueGrey,
-            thickness: 2,
-          ),
-          // Giriş Yapma ve Güvenlik sekmesi
-          InkWell(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => GuvenlikScreen()),
-              );
-            },
-            child: Container(
-              padding: EdgeInsets.all(16),
-              child: Row(
-                children: [
-                  Icon(Icons.lock),
-                  SizedBox(width: 16),
-                  Text('Giriş Yapma ve Güvenlik'),
-                ],
-              ),
-            ),
-          ),
-          Divider(
-            color: Colors.blueGrey,
-            thickness: 2,
-          ),
-          // Ödemeler sekmesi
-          InkWell(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => OdemelerScreen()),
-              );
-            },
-            child: Container(
-              padding: EdgeInsets.all(16),
-              child: Row(
-                children: [
-                  Icon(Icons.payment),
-                  SizedBox(width: 16),
-                  Text('Ödemeler'),
-                ],
-              ),
-            ),
-          ),
-          Divider(
-            color: Colors.blueGrey,
-            thickness: 2,
-          ),
-          Spacer(),
-          Padding(
-            padding: EdgeInsets.only(bottom: 16),
-            child: Container(
-              padding: EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                color: Colors.grey.withOpacity(0.1),
-                borderRadius: BorderRadius.circular(8),
-              ),
-              child: Center(
-                child: Text(
-                  'Çıkış Yap',
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: const Color.fromARGB(255, 209, 30, 17),
-                  ),
-                ),
-              ),
-            ),
           ),
         ],
       ),
+      body: ListView(
+        padding: EdgeInsets.all(16),
+        children: [
+          Card(
+            color: Colors.white,
+            child: Padding(
+              padding: EdgeInsets.all(16),
+              child: Column(
+                children: [
+                  CircleAvatar(
+                    radius: 50,
+                    backgroundColor: Colors.black,
+                    child: Text(
+                      "DD",
+                      style: TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white),
+                    ),
+                  ),
+                  SizedBox(height: 16),
+                  ListTile(
+                    leading: Icon(Icons.person),
+                    title: Text("Dilara Dertli"),
+                    subtitle: Text("Ad Soyad"),
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.email),
+                    title: Text("dertlidilara@gmail.com"),
+                    subtitle: Text("E-posta"),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          SizedBox(height: 24),
+          FilledButton.icon(
+            onPressed: () {},
+            icon: Icon(Icons.logout),
+            label: Text("Hesaptan Çıkış Yap"),
+            style: FilledButton.styleFrom(
+              backgroundColor: Colors.black,
+              minimumSize: Size(double.infinity, 50),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+            ),
+          ),
+          if (context.canPop())
+            TextButton.icon(
+              onPressed: () => context.pop(),
+              icon: Icon(Icons.arrow_back),
+              label: Text("Geri Dön"),
+              style: TextButton.styleFrom(
+                minimumSize: Size(double.infinity, 50),
+              ),
+            ),
+        ],
+      ),
+      bottomNavigationBar: BottomMenu(),
     );
   }
 }
