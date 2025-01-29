@@ -12,10 +12,8 @@ class LoadingScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 234, 0, 0),
       body: SizedBox.expand(
-        //width: double.infinity,
         child: Column(
           children: [
-            // Logo bölümü
             Expanded(
               child: Container(
                 width: 150,
@@ -26,7 +24,6 @@ class LoadingScreen extends StatelessWidget {
                 ),
               ),
             ),
-
             Text(
               'RedRoute',
               style: TextStyle(
@@ -35,10 +32,6 @@ class LoadingScreen extends StatelessWidget {
                   color: Colors.white,
                   fontStyle: FontStyle.italic),
             ),
-
-            // Yükleniyor yazısı
-            //CircularProgressIndicator(),
-
             InkWell(
               onTap: () => context.go("/home"),
               child: SizedBox(
@@ -55,7 +48,6 @@ class LoadingScreen extends StatelessWidget {
                 ),
               ),
             ),
-
             SizedBox(height: 60),
           ],
         ),
