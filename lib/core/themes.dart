@@ -17,7 +17,7 @@ const colors = {
   "secondary": Color.fromARGB(255, 255, 254, 254),
   "onSecondary": Color.fromARGB(255, 74, 160, 241),
   "surface": Color.fromARGB(255, 255, 255, 255),
-  "onSurface": Color.fromARGB(255, 19, 0, 0),
+  "onSurface": Color.fromARGB(255, 51, 52, 67),
   "success": Colors.green,
   "error": Colors.red,
   "onError": Colors.white,
