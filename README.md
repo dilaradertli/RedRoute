@@ -11,8 +11,6 @@
 - **Takım Üyeleri:**
    - Dilara Dertli [https://github.com/dilaradertli]
 
-## Özellikler
-- [Dil Desteği]
 
 ## Kullanılan Teknolojiler
 - Flutter
