@@ -57,25 +57,7 @@ lib/
 ```
 
 ## Ekran Görüntüleri
-![GirişSayfası.png](..%2F..%2FPictures%2FScreenshots%2FGiri%FESayfas%FD.png)
 
-![AnaEkran1.png](..%2F..%2FPictures%2FScreenshots%2FAnaEkran1.png)
-
-![AnaEkran2.png](..%2F..%2FPictures%2FScreenshots%2FAnaEkran2.png)
-
-![AnaEkran3.png](..%2F..%2FPictures%2FScreenshots%2FAnaEkran3.png)
-
-![Search.png](..%2F..%2FPictures%2FScreenshots%2FSearch.png)
-
-![Search2.png](..%2F..%2FPictures%2FScreenshots%2FSearch2.png)
-
-![Profile.png](..%2F..%2FPictures%2FScreenshots%2FProfile.png)
-
-![Profile2.png](..%2F..%2FPictures%2FScreenshots%2FProfile2.png)
-
-![Settings.png](..%2F..%2FPictures%2FScreenshots%2FSettings.png)
-
-![settings2.png](..%2F..%2FPictures%2FScreenshots%2Fsettings2.png)
 
 
 ## Projeye Katkı Sağlama
