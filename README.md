@@ -77,7 +77,7 @@ lib/
 
 ![settings2](https://github.com/user-attachments/assets/25b4d69e-3877-4a3a-8232-e35d62977da1)
 
-[![RedRoute](https://youtu.be/gGv7HMHSiwM?si=AJululnSWfc4nSMH)]
+[![RedRoute] (https://img.youtube.com/si/AJululnSWfc4nSMH/0.jpg]
 
 
 ## Projeye Katkı Sağlama
