@@ -43,5 +43,5 @@ flutter_icons:
   adaptive_icon_background: "#FFFFFF"
   adaptive_icon_foreground: "assets/icons/redroute.png"
   min_sdk_android: 21
-  icon_size: 96
+  icon_size: 144
   theme_color: "#232f3b"
