@@ -96,7 +96,7 @@ class HomeScreen extends StatelessWidget {
       ),
       body: Column(
         children: [
-          const SizedBox(height: 20), 
+          const SizedBox(height: 20),
           Expanded(
             child: ListView(
               padding: const EdgeInsets.all(10),
