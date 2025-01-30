@@ -3,7 +3,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
-import '../core/constants.dart';
 import '../core/themes.dart';
 import '../widgets/bottom_menu.dart';
 
@@ -12,10 +11,14 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDarkMode = context.watch<ThemeProvider>().isDark;
+
+    final currentColors = isDarkMode ? darkColors : colors;
+
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: currentColors["surface"],
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 200, 20, 7),
+        backgroundColor: currentColors["primary"],
         title: const Text(
           'RedRoute',
           style: TextStyle(
@@ -34,7 +37,7 @@ class HomeScreen extends StatelessWidget {
             onPressed: () {},
           ),
           IconButton(
-            icon: Icon(CupertinoIcons.moon),
+            icon: const Icon(CupertinoIcons.moon),
             onPressed: () {
               context.read<ThemeProvider>().toggleTheme();
             },
@@ -42,21 +45,21 @@ class HomeScreen extends StatelessWidget {
         ],
       ),
       drawer: Drawer(
-        backgroundColor: Colors.white,
+        backgroundColor: currentColors["surface"],
         elevation: 0,
         child: Column(
           children: [
-            Container(
+            const SizedBox(
               height: 200,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Icon(
+                  Icon(
                     CupertinoIcons.person_circle,
                     size: 80,
                     color: Colors.black87,
                   ),
-                  const SizedBox(height: 10),
+                  SizedBox(height: 10),
                 ],
               ),
             ),
@@ -99,228 +102,73 @@ class HomeScreen extends StatelessWidget {
               mainAxisSpacing: 10,
               crossAxisSpacing: 10,
               children: [
-                Container(
-                  height: 50,
-                  width: 50,
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Colors.grey, width: 2),
-                    borderRadius: BorderRadius.circular(10),
-                    image: DecorationImage(
-                      image: AssetImage('assets/images/Otel1.jpg'),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  child: Align(
-                    alignment: Alignment.bottomCenter,
-                    child: Padding(
-                      padding: EdgeInsets.all(8),
-                      child: Text(
-                        'Butik Oteller',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                        ),
-                      ),
-                    ),
-                  ),
+                _buildCategoryItem(
+                  image: 'assets/images/Otel1.jpg',
+                  title: 'Butik Oteller',
+                  currentColors: currentColors,
                 ),
-                Container(
-                  height: 50,
-                  width: 50,
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: Colors.grey,
-                      width: 2,
-                    ),
-                    borderRadius: BorderRadius.circular(10),
-                    image: DecorationImage(
-                      image: AssetImage('assets/images/Otel2.jpg'),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  child: Align(
-                    alignment: Alignment.bottomCenter,
-                    child: Padding(
-                      padding: EdgeInsets.all(8),
-                      child: Text(
-                        'Bungalovlar',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                        ),
-                      ),
-                    ),
-                  ),
+                _buildCategoryItem(
+                  image: 'assets/images/Otel2.jpg',
+                  title: 'Bungalovlar',
+                  currentColors: currentColors,
                 ),
-                Container(
-                  height: 50,
-                  width: 50,
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: Colors.grey,
-                      width: 2,
-                    ),
-                    borderRadius: BorderRadius.circular(10),
-                    image: DecorationImage(
-                      image: AssetImage('assets/images/Otel3.jpg'),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  child: Align(
-                    alignment: Alignment.bottomCenter,
-                    child: Padding(
-                      padding: EdgeInsets.all(8),
-                      child: Text(
-                        'Konteyner Evler',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                        ),
-                      ),
-                    ),
-                  ),
+                _buildCategoryItem(
+                  image: 'assets/images/Otel3.jpg',
+                  title: 'Konteyner Evler',
+                  currentColors: currentColors,
                 ),
-                Container(
-                  height: 50,
-                  width: 50,
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: Colors.grey,
-                      width: 2,
-                    ),
-                    borderRadius: BorderRadius.circular(10),
-                    image: DecorationImage(
-                      image: AssetImage('assets/images/Otel4.jpg'),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  child: Align(
-                    alignment: Alignment.bottomCenter,
-                    child: Padding(
-                      padding: EdgeInsets.all(8),
-                      child: Text(
-                        'Ağaç Evler',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                        ),
-                      ),
-                    ),
-                  ),
+                _buildCategoryItem(
+                  image: 'assets/images/Otel4.jpg',
+                  title: 'Ağaç Evler',
+                  currentColors: currentColors,
                 ),
-                Container(
-                  height: 50,
-                  width: 50,
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: Colors.grey,
-                      width: 2,
-                    ),
-                    borderRadius: BorderRadius.circular(10),
-                    image: DecorationImage(
-                      image: AssetImage('assets/images/Otel5.jpg'),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  child: Align(
-                    alignment: Alignment.bottomCenter,
-                    child: Padding(
-                      padding: EdgeInsets.all(8),
-                      child: Text(
-                        'Oteller',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                        ),
-                      ),
-                    ),
-                  ),
+                _buildCategoryItem(
+                  image: 'assets/images/Otel5.jpg',
+                  title: 'Oteller',
+                  currentColors: currentColors,
                 ),
-                Container(
-                  height: 50,
-                  width: 50,
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: Colors.grey,
-                      width: 2,
-                    ),
-                    borderRadius: BorderRadius.circular(10),
-                    image: DecorationImage(
-                      image: AssetImage('assets/images/Otel6.jpg'),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  child: Align(
-                    alignment: Alignment.bottomCenter,
-                    child: Padding(
-                      padding: EdgeInsets.all(8),
-                      child: Text(
-                        'Karavanlar',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                        ),
-                      ),
-                    ),
-                  ),
+                _buildCategoryItem(
+                  image: 'assets/images/Otel6.jpg',
+                  title: 'Karavanlar',
+                  currentColors: currentColors,
                 ),
               ],
             ),
           )
         ],
       ),
-      bottomNavigationBar: Container(
-        height: 70,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            IconButton(
-              onPressed: () {
-                context.go("/home");
-              },
-              icon: Icon(
-                CupertinoIcons.home,
-              ),
+      bottomNavigationBar: const BottomMenu(),
+    );
+  }
+
+  Widget _buildCategoryItem({
+    required String image,
+    required String title,
+    required Map<String, Color> currentColors,
+  }) {
+    return Container(
+      height: 50,
+      width: 50,
+      decoration: BoxDecoration(
+        border: Border.all(color: currentColors["onSurface"]!, width: 2),
+        borderRadius: BorderRadius.circular(10),
+        image: DecorationImage(
+          image: AssetImage(image),
+          fit: BoxFit.cover,
+        ),
+      ),
+      child: Align(
+        alignment: Alignment.bottomCenter,
+        child: Padding(
+          padding: const EdgeInsets.all(8),
+          child: Text(
+            title,
+            style: TextStyle(
+              color: currentColors["onSurface"]!,
+              fontWeight: FontWeight.bold,
+              fontSize: 20,
             ),
-            IconButton(
-              onPressed: () {
-                context.go("/favorite");
-              },
-              icon: Icon(
-                CupertinoIcons.heart,
-              ),
-            ),
-            IconButton(
-              onPressed: () {
-                context.go("/search");
-              },
-              icon: Icon(
-                CupertinoIcons.search,
-              ),
-            ),
-            IconButton(
-              onPressed: () {
-                context.go("/chat");
-              },
-              icon: Icon(
-                CupertinoIcons.chat_bubble,
-              ),
-            ),
-            IconButton(
-              onPressed: () {
-                context.go("/profile");
-              },
-              icon: Icon(
-                CupertinoIcons.person,
-              ),
-            ),
-          ],
+          ),
         ),
       ),
     );
