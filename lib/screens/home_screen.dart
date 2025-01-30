@@ -96,11 +96,10 @@ class HomeScreen extends StatelessWidget {
       ),
       body: Column(
         children: [
+          const SizedBox(height: 20), 
           Expanded(
-            child: GridView.count(
-              crossAxisCount: 2,
-              mainAxisSpacing: 10,
-              crossAxisSpacing: 10,
+            child: ListView(
+              padding: const EdgeInsets.all(10),
               children: [
                 _buildCategoryItem(
                   image: 'assets/images/Otel1.jpg',
@@ -147,8 +146,8 @@ class HomeScreen extends StatelessWidget {
     required Map<String, Color> currentColors,
   }) {
     return Container(
-      height: 50,
-      width: 50,
+      height: 150,
+      margin: const EdgeInsets.only(bottom: 10),
       decoration: BoxDecoration(
         border: Border.all(color: currentColors["onSurface"]!, width: 2),
         borderRadius: BorderRadius.circular(10),
@@ -164,7 +163,7 @@ class HomeScreen extends StatelessWidget {
           child: Text(
             title,
             style: TextStyle(
-              color: currentColors["onSurface"]!,
+              color: Colors.white,
               fontWeight: FontWeight.bold,
               fontSize: 20,
             ),
