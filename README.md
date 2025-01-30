@@ -77,7 +77,7 @@ lib/
 
 ![settings2](https://github.com/user-attachments/assets/25b4d69e-3877-4a3a-8232-e35d62977da1)
 
-
+https://github.com/user-attachments/assets/a8d1c6e0-e11b-4019-a11c-e06348f8500c
 
 
 ## Projeye Katkı Sağlama
