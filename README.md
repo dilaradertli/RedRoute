@@ -57,17 +57,26 @@ lib/
 ```
 
 ## Ekran Görüntüleri
-![GirişSayfası](https://github.com/user-attachments/assets/e44699f7-bb51-4550-881a-3506e36bd98b)
+![GirişSayfası.png](..%2F..%2FPictures%2FScreenshots%2FGiri%FESayfas%FD.png)
 
-![AnaSayfa](https://github.com/user-attachments/assets/1f0eb746-b037-492b-aaed-d520654b779e)
+![AnaEkran1.png](..%2F..%2FPictures%2FScreenshots%2FAnaEkran1.png)
 
-![AramaSayfası](https://github.com/user-attachments/assets/43594ad7-f06c-4a65-8130-f5b19b7f501b)
+![AnaEkran2.png](..%2F..%2FPictures%2FScreenshots%2FAnaEkran2.png)
 
-![ProfilSayfası](https://github.com/user-attachments/assets/dac4d077-51ec-411a-b466-13c542616044)
+![AnaEkran3.png](..%2F..%2FPictures%2FScreenshots%2FAnaEkran3.png)
 
-![DilSeçenekleri](https://github.com/user-attachments/assets/bd658b63-e92d-4763-a867-e98fb5593609)
+![Search.png](..%2F..%2FPictures%2FScreenshots%2FSearch.png)
 
-![KişiselBilgiler](https://github.com/user-attachments/assets/ccd075a0-a09d-499e-a920-c4a11bb9600b)
+![Search2.png](..%2F..%2FPictures%2FScreenshots%2FSearch2.png)
+
+![Profile.png](..%2F..%2FPictures%2FScreenshots%2FProfile.png)
+
+![Profile2.png](..%2F..%2FPictures%2FScreenshots%2FProfile2.png)
+
+![Settings.png](..%2F..%2FPictures%2FScreenshots%2FSettings.png)
+
+![settings2.png](..%2F..%2FPictures%2FScreenshots%2Fsettings2.png)
+
 
 ## Projeye Katkı Sağlama
 1. Projeyi forklayın.   
