@@ -11,6 +11,7 @@ dependencies:
   dotlottie_loader: ^0.0.4
   flutter:
     sdk: flutter
+  flutter_launcher_icons: ^0.14.3
   flutter_secure_storage: ^9.2.2
   go_router: ^14.6.2
   google_fonts: ^6.2.1
@@ -31,3 +32,16 @@ flutter:
     - assets/icons/
     - assets/languages/
     - assets/motions/
+
+flutter_icons:
+  android: true
+  ios: true
+  web: true
+  windows: true
+  macos: true
+  image_path: "assets/icons/redroute.png"
+  adaptive_icon_background: "#FFFFFF"
+  adaptive_icon_foreground: "assets/icons/redroute.png"
+  min_sdk_android: 21
+  icon_size: 96
+  theme_color: "#232f3b"
