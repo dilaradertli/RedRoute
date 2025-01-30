@@ -7,6 +7,7 @@ import '../screens/profile_screen.dart';
 import '../screens/search_screen.dart';
 import '../screens/chat_screen.dart';
 import '../screens/favorite_screen.dart';
+import '../screens/settings_screen.dart';
 
 final router = GoRouter(
   initialLocation: '/',
