@@ -24,28 +24,13 @@ class BottomMenu extends StatelessWidget {
           ),
           IconButton(
             onPressed: () {
-              context.go("/favorite");
-            },
-            icon: Icon(
-              CupertinoIcons.heart,
-            ),
-          ),
-          IconButton(
-            onPressed: () {
               context.go("/search");
             },
             icon: Icon(
               Icons.search,
             ),
           ),
-          IconButton(
-            onPressed: () {
-              context.go("/chat");
-            },
-            icon: Icon(
-              CupertinoIcons.chat_bubble,
-            ),
-          ),
+
           IconButton(
             onPressed: () {
               context.go("/profile");
