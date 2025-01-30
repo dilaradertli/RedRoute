@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
 import '../core/themes.dart';
@@ -20,6 +21,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
           'Ayarlar',
           style: TextStyle(
               color: Colors.white, fontSize: 25, fontWeight: FontWeight.bold),
+        ),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () {
+            context.go('/home');
+          },
         ),
       ),
       body: ListView(
