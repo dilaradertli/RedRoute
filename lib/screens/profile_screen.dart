@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
-import '../core/constants.dart';
 import '../core/themes.dart';
 import '../widgets/bottom_menu.dart';
 
@@ -12,21 +11,23 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDarkMode = context.watch<ThemeProvider>().isDark;
+
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: isDarkMode ? darkColors["surface"] : colors["surface"],
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 200, 20, 7),
+        backgroundColor: isDarkMode ? darkColors["primary"] : colors["primary"],
         title: Text(
           "Profil",
           style: TextStyle(
-              color: Colors.white,
+              color: isDarkMode ? darkColors["onPrimary"] : colors["onPrimary"],
               fontSize: 25,
               fontWeight: FontWeight.bold,
               fontStyle: FontStyle.italic),
         ),
         actions: [
           IconButton(
-            icon: Icon(CupertinoIcons.moon),
+            icon: const Icon(CupertinoIcons.moon),
             onPressed: () {
               context.read<ThemeProvider>().toggleTheme();
             },
@@ -34,48 +35,74 @@ class ProfileScreen extends StatelessWidget {
         ],
       ),
       body: ListView(
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         children: [
           Card(
-            color: Colors.white,
+            color: isDarkMode ? darkColors["surface"] : colors["surface"],
             child: Padding(
-              padding: EdgeInsets.all(16),
+              padding: const EdgeInsets.all(16),
               child: Column(
                 children: [
                   CircleAvatar(
                     radius: 50,
-                    backgroundColor: Colors.black,
+                    backgroundColor:
+                        isDarkMode ? darkColors["primary"] : colors["primary"],
                     child: Text(
                       "DD",
                       style: TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
-                          color: Colors.white),
+                          color: isDarkMode
+                              ? darkColors["onPrimary"]
+                              : colors["onPrimary"]),
                     ),
                   ),
-                  SizedBox(height: 16),
+                  const SizedBox(height: 16),
                   ListTile(
-                    leading: Icon(Icons.person),
-                    title: Text("Dilara Dertli"),
-                    subtitle: Text("Ad Soyad"),
+                    leading: Icon(Icons.person,
+                        color: isDarkMode
+                            ? darkColors["onSurface"]
+                            : colors["onSurface"]),
+                    title: Text("Dilara Dertli",
+                        style: TextStyle(
+                            color: isDarkMode
+                                ? darkColors["onSurface"]
+                                : colors["onSurface"])),
+                    subtitle: Text("Ad Soyad",
+                        style: TextStyle(
+                            color: isDarkMode
+                                ? darkColors["onSurface"]
+                                : colors["onSurface"])),
                   ),
                   ListTile(
-                    leading: Icon(Icons.email),
-                    title: Text("dertlidilara@gmail.com"),
-                    subtitle: Text("E-posta"),
+                    leading: Icon(Icons.email,
+                        color: isDarkMode
+                            ? darkColors["onSurface"]
+                            : colors["onSurface"]),
+                    title: Text("dertlidilara@gmail.com",
+                        style: TextStyle(
+                            color: isDarkMode
+                                ? darkColors["onSurface"]
+                                : colors["onSurface"])),
+                    subtitle: Text("E-posta",
+                        style: TextStyle(
+                            color: isDarkMode
+                                ? darkColors["onSurface"]
+                                : colors["onSurface"])),
                   ),
                 ],
               ),
             ),
           ),
-          SizedBox(height: 24),
+          const SizedBox(height: 24),
           FilledButton.icon(
             onPressed: () {},
-            icon: Icon(Icons.logout),
-            label: Text("Hesaptan Çıkış Yap"),
+            icon: const Icon(Icons.logout),
+            label: const Text("Hesaptan Çıkış Yap"),
             style: FilledButton.styleFrom(
-              backgroundColor: Colors.black,
-              minimumSize: Size(double.infinity, 50),
+              backgroundColor:
+                  isDarkMode ? darkColors["primary"] : colors["primary"],
+              minimumSize: const Size(double.infinity, 50),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10),
               ),
@@ -84,15 +111,22 @@ class ProfileScreen extends StatelessWidget {
           if (context.canPop())
             TextButton.icon(
               onPressed: () => context.pop(),
-              icon: Icon(Icons.arrow_back),
-              label: Text("Geri Dön"),
+              icon: Icon(Icons.arrow_back,
+                  color: isDarkMode
+                      ? darkColors["onSurface"]
+                      : colors["onSurface"]),
+              label: Text("Geri Dön",
+                  style: TextStyle(
+                      color: isDarkMode
+                          ? darkColors["onSurface"]
+                          : colors["onSurface"])),
               style: TextButton.styleFrom(
-                minimumSize: Size(double.infinity, 50),
+                minimumSize: const Size(double.infinity, 50),
               ),
             ),
         ],
       ),
-      bottomNavigationBar: BottomMenu(),
+      bottomNavigationBar: const BottomMenu(),
     );
   }
 }
