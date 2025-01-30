@@ -5,9 +5,8 @@ import '../screens/loading_screen.dart';
 import '../screens/home_screen.dart';
 import '../screens/profile_screen.dart';
 import '../screens/search_screen.dart';
-import '../screens/chat_screen.dart';
-import '../screens/favorite_screen.dart';
 import '../screens/settings_screen.dart';
+
 
 final router = GoRouter(
   initialLocation: '/',
@@ -41,25 +40,12 @@ final router = GoRouter(
       ),
     ),
     GoRoute(
-      path: '/chat',
-      pageBuilder: (context, state) => NoTransitionPage(
-        key: state.pageKey,
-        child: const ChatScreen(),
-      ),
-    ),
-    GoRoute(
-      path: '/favorite',
-      pageBuilder: (context, state) => NoTransitionPage(
-        key: state.pageKey,
-        child: const FavoriteScreen(),
-      ),
-    ),
-    GoRoute(
       path: '/settings',
       pageBuilder: (context, state) => NoTransitionPage(
         key: state.pageKey,
         child: const SettingsScreen(),
       ),
     ),
+
   ],
 );
