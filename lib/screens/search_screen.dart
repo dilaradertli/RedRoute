@@ -16,15 +16,15 @@ class SearchScreen extends StatelessWidget {
         slivers: [
           SliverAppBar(
             backgroundColor:
-                isDarkMode ? darkColors["surface"] : colors["surface"],
+            isDarkMode ? darkColors["surface"] : colors["surface"],
             floating: true,
             snap: true,
             title: TextField(
               decoration: InputDecoration(
                 hintText: "Ara...",
                 filled: true,
-                fillColor:
-                    isDarkMode ? darkColors["secondary"] : colors["secondary"],
+                fillColor: Color.fromARGB(255, 200, 20, 7),
+
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(50),
                   borderSide: BorderSide.none,
@@ -52,10 +52,10 @@ class SearchScreen extends StatelessWidget {
                   Text(
                     "Son Aramalar",
                     style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                          color: isDarkMode
-                              ? darkColors["onSurface"]
-                              : colors["onSurface"],
-                        ),
+                      color: isDarkMode
+                          ? darkColors["onSurface"]
+                          : colors["onSurface"],
+                    ),
                   ),
                   const SizedBox(height: 8),
                   Wrap(
@@ -136,10 +136,10 @@ class SearchScreen extends StatelessWidget {
                                   .textTheme
                                   .titleMedium!
                                   .copyWith(
-                                    color: isDarkMode
-                                        ? darkColors["onSurface"]
-                                        : colors["onSurface"],
-                                  ),
+                                color: isDarkMode
+                                    ? darkColors["onSurface"]
+                                    : colors["onSurface"],
+                              ),
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
                             ),
@@ -149,10 +149,10 @@ class SearchScreen extends StatelessWidget {
                                   .textTheme
                                   .bodySmall!
                                   .copyWith(
-                                    color: isDarkMode
-                                        ? darkColors["onSurface"]
-                                        : colors["onSurface"],
-                                  ),
+                                color: isDarkMode
+                                    ? darkColors["onSurface"]
+                                    : colors["onSurface"],
+                              ),
                               maxLines: 2,
                               overflow: TextOverflow.ellipsis,
                             ),
@@ -195,10 +195,10 @@ class SearchScreen extends StatelessWidget {
                                   .textTheme
                                   .titleMedium!
                                   .copyWith(
-                                    color: isDarkMode
-                                        ? darkColors["onSurface"]
-                                        : colors["onSurface"],
-                                  ),
+                                color: isDarkMode
+                                    ? darkColors["onSurface"]
+                                    : colors["onSurface"],
+                              ),
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
                             ),
@@ -208,10 +208,10 @@ class SearchScreen extends StatelessWidget {
                                   .textTheme
                                   .bodySmall!
                                   .copyWith(
-                                    color: isDarkMode
-                                        ? darkColors["onSurface"]
-                                        : colors["onSurface"],
-                                  ),
+                                color: isDarkMode
+                                    ? darkColors["onSurface"]
+                                    : colors["onSurface"],
+                              ),
                               maxLines: 2,
                               overflow: TextOverflow.ellipsis,
                             ),
